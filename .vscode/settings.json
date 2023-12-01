@@ -1,7 +1,9 @@
 {
-    "editor.formatOnSave": true,
-    "prettier.documentSelectors": [
-        "**/*.vue"
-    ],
-    "eslint.format.enable": false,
+  "editor.formatOnSave": true,
+  "prettier.documentSelectors": [
+    "**/*.vue",
+    "**/*.ts",
+    "**/*.js"
+  ],
+  "eslint.format.enable": false
 }

@@ -73,3 +73,5 @@ bun run preview
 ```
 
 Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+
+npx supabase gen types typescript --project-id ykrvshqpwvvswrhxroog > database-generated.types.ts
