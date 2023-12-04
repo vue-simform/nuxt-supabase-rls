@@ -89,49 +89,16 @@ export interface Database {
           }
         ]
       }
-      project_user: {
-        Row: {
-          project_id: number
-          user_id: string
-        }
-        Insert: {
-          project_id: number
-          user_id: string
-        }
-        Update: {
-          project_id?: number
-          user_id?: string
-        }
-        Relationships: [
-          {
-            foreignKeyName: "project_user_project_id_fkey"
-            columns: ["project_id"]
-            isOneToOne: false
-            referencedRelation: "projects"
-            referencedColumns: ["project_id"]
-          },
-          {
-            foreignKeyName: "project_user_user_id_fkey"
-            columns: ["user_id"]
-            isOneToOne: false
-            referencedRelation: "profiles"
-            referencedColumns: ["id"]
-          }
-        ]
-      }
       projects: {
         Row: {
-          is_public: boolean | null
           project_id: number
           project_name: string
         }
         Insert: {
-          is_public?: boolean | null
           project_id?: number
           project_name: string
         }
         Update: {
-          is_public?: boolean | null
           project_id?: number
           project_name?: string
         }
@@ -188,6 +155,39 @@ export interface Database {
           },
           {
             foreignKeyName: "user_organisation_user_id_fkey"
+            columns: ["user_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          }
+        ]
+      }
+      user_project: {
+        Row: {
+          is_private: boolean
+          project_id: number
+          user_id: string
+        }
+        Insert: {
+          is_private?: boolean
+          project_id: number
+          user_id: string
+        }
+        Update: {
+          is_private?: boolean
+          project_id?: number
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "user_project_project_id_fkey"
+            columns: ["project_id"]
+            isOneToOne: false
+            referencedRelation: "projects"
+            referencedColumns: ["project_id"]
+          },
+          {
+            foreignKeyName: "user_project_user_id_fkey"
             columns: ["user_id"]
             isOneToOne: false
             referencedRelation: "profiles"
