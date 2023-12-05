@@ -25,13 +25,21 @@ const handleLogout = async () => {
   <header class="bg-primary/20 py-4">
     <nav class="container mx-auto flex items-center justify-between">
       <h2 class="text-lg font-bold">Simform Nuxt + Supabase Template</h2>
-      <Button
-        v-if="user"
-        text="Logout"
-        :loading="loading"
-        class="bg-red-500 hover:bg-red-400"
-        @click="handleLogout"
-      />
+      <div class="flex items-center gap-2">
+        <NuxtLink to="/">
+          <UButton variant="link" size="xl">Home</UButton>
+        </NuxtLink>
+        <NuxtLink to="/organisations">
+          <UButton variant="link" size="xl">Organisations</UButton>
+        </NuxtLink>
+        <Button
+          v-if="user"
+          text="Logout"
+          :loading="loading"
+          class="bg-red-500 hover:bg-red-400"
+          @click="handleLogout"
+        />
+      </div>
     </nav>
   </header>
 </template>
