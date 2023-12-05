@@ -93,14 +93,17 @@ export interface Database {
         Row: {
           project_id: number
           project_name: string
+          text: string | null
         }
         Insert: {
           project_id?: number
           project_name: string
+          text?: string | null
         }
         Update: {
           project_id?: number
           project_name?: string
+          text?: string | null
         }
         Relationships: []
       }

@@ -15,7 +15,7 @@ const signInWithEmail = async () => {
       password: state.password,
     });
     if (error) throw error;
-    await navigateTo({ path: "/organisations" });
+    await navigateTo({ name: "organisations" });
     toast.add({ title: "Login successful" });
   } catch (error: any) {
     toast.add({ title: error?.message || "Something went wrong" });
