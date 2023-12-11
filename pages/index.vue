@@ -14,11 +14,14 @@ const user = useSupabaseUser();
           <UButton size="xl"> Register </UButton>
         </NuxtLink>
       </template>
-      <template v-else>
+      <div v-else class="flex flex-col gap-2">
+        <h3 class="text-xl font-bold">
+          Hello, {{ user.email }}. Have a good day.
+        </h3>
         <NuxtLink to="/organisations">
           <UButton size="xl">Organisations</UButton>
         </NuxtLink>
-      </template>
+      </div>
     </div>
   </div>
 </template>
