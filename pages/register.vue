@@ -92,7 +92,7 @@ const signUpWithEmail = handleSubmit(async () => {
           :loading="loading"
           type="submit"
         >
-          Submit
+          Register
         </UButton>
         <p v-if="isSubmitted" class="text-2xl mt-2 font-medium text-green-600">
           Check your email for the login link!
