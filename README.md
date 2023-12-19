@@ -24,7 +24,7 @@ npm install
 ## Project Setup
 
 1. Go to [Supabase Dashboard](https://supabase.com/dashboard/projects) & select your project while you have just created
-2. Go to setting, then under database, API tab.
+2. Go to setting, then under database, `API` tab.
 3. Now open your project, create a `.env` file in the projects root.
 
 ```
@@ -63,6 +63,15 @@ npm run dev
 Start the development server on `http://localhost:3000`:
 
 Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+
+## Project Flow
+
+1. For user login you first have to `register`. Go to [http://localhost:3000/register](http://localhost:3000/register) & register the users.
+1. After registration, a **login link** will be sent to the users email account.
+1. Clicking on that link will simply login user, also your email will be verified (By Default done by Supabase).
+1. Now you can access the `organisations` tab which was unaccessabe earlier.
+1. You will see that you are not added to any organisation.
+1. You can do it manually, through [Supabase Dashboard](https://supabase.com/dashboard/projects)
 
 ## Features
 
