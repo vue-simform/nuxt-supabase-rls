@@ -3,8 +3,7 @@
 Nuxt Supabase is a getting started template for Nuxt + Supabase projects, having pre configued Auth, RLS, policies, Nuxt UI, Tailwind setup
 
 ## 📹 Preview
-
-https://github.com/vue-simform/nuxt-supabase-rls/public/demo.mp4
+https://github.com/vue-simform/nuxt-supabase-rls/assets/152366223/97227864-4c8b-431d-b057-405442394a46
 
 ## Clone
 
