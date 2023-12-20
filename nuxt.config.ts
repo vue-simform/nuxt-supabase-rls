@@ -1,10 +1,10 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  modules: ['@nuxt/ui', '@nuxtjs/supabase'],
+  modules: ["@nuxt/ui", "@nuxtjs/supabase"],
   devtools: { enabled: true },
-  css: ['~/assets/css/main.css'],
+  css: ["~/assets/css/main.css"],
   colorMode: {
-    preference: 'light'
+    preference: "light",
   },
   postcss: {
     plugins: {
@@ -15,4 +15,9 @@ export default defineNuxtConfig({
   supabase: {
     redirect: false,
   },
-})
+  runtimeConfig: {
+    public: {
+      host: process.env.HOST,
+    },
+  },
+});

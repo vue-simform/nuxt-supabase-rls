@@ -1,10 +1,10 @@
-# Nuxt + Supabase (with RLS & Policies) POC
+## Nuxt + Supabase
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+Nuxt Supabase is a getting started template for Nuxt + Supabase projects, having pre configued Auth, RLS, policies, Nuxt UI, Tailwind setup
 
-## Demo
+## 📹 Preview
 
-[Link](https://simformsolutionspvtltd-my.sharepoint.com/:v:/r/personal/sushil_simformsolutions_com/Documents/POCs/Nuxt%20Supabase.mkv?csf=1&web=1&e=1Oq32W&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D)
+https://github.com/vue-simform/nuxt-supabase-rls/public/demo.mp4
 
 ## Clone
 
@@ -31,6 +31,7 @@ npm install
 SUPABASE_URL="https://abc.supabase.co"
 SUPABASE_KEY="YOUR_KEY"
 SUPABASE_SERVICE_KEY="YOUR_SERVICE_KEY"
+HOST="http://localhost:3000"
 ```
 
 4. Follow the above `.env` format and copy & past **your** credentials in that file.
@@ -53,6 +54,10 @@ npx supabase gen types typescript --project-id YOUR_PROJECT_REFERANCE_ID > datab
 ```
 
 > Note: Substitute your project referance id instead of YOUR_PROJECT_REFERANCE_ID
+
+## Azure Auth (Optional)
+
+Follow the steps mentioned [here](https://supabase.com/docs/guides/auth/social-login/auth-azure)
 
 ## Run the project
 

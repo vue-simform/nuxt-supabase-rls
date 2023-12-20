@@ -44,15 +44,25 @@ const signUpWithEmail = handleSubmit(async () => {
 </script>
 <template>
   <section class="w-1/2 mx-auto mt-20">
-    <div class="p-6 rounded-md shadow-md border">
+    <div class="p-6 rounded-lg shadow-md border">
       <h1 class="text-xl mb-6">Register</h1>
+
+      <AzureLogin />
+
+      <div class="flex items-center gap-2 my-4">
+        <hr class="grow" />
+        <span class="font-bold text-primary">OR</span>
+        <hr class="grow" />
+      </div>
+
       <form class="flex flex-col gap-4" @submit.prevent="signUpWithEmail">
         <div class="flex flex-col gap-1">
-          <input
+          <UInput
             v-model="email"
             v-bind="emailProps"
             type="email"
-            class="t-input"
+            size="lg"
+            variant="outline"
             placeholder="Email"
           />
           <span v-if="errors.email" class="text-xs font-medium text-red-500">
@@ -60,11 +70,12 @@ const signUpWithEmail = handleSubmit(async () => {
           </span>
         </div>
         <div class="flex flex-col gap-1">
-          <input
+          <UInput
             type="password"
             v-model="password"
             v-bind="passwordProps"
-            class="t-input"
+            size="lg"
+            variant="outline"
             placeholder="Password"
           />
           <span v-if="errors.password" class="text-xs font-medium text-red-500">
@@ -72,11 +83,12 @@ const signUpWithEmail = handleSubmit(async () => {
           </span>
         </div>
         <div class="flex flex-col gap-1">
-          <input
+          <UInput
             type="password"
             v-model="confirmPassword"
             v-bind="confirmPasswordProps"
-            class="t-input"
+            size="lg"
+            variant="outline"
             placeholder="Confirm password"
           />
           <span
@@ -88,13 +100,14 @@ const signUpWithEmail = handleSubmit(async () => {
         </div>
         <UButton
           size="xl"
+          icon="i-heroicons-pencil-square"
           :disabled="!meta.valid || isSubmitted"
           :loading="loading"
           type="submit"
         >
           Register
         </UButton>
-        <p v-if="isSubmitted" class="text-2xl mt-2 font-medium text-green-600">
+        <p v-if="isSubmitted" class="text-2xlfont-medium text-green-600">
           Check your email for the login link!
         </p>
       </form>

@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { useForm } from "vee-validate";
 import * as yup from "yup";
+
 const schema = yup.object({
   email: yup.string().email().required("Please enter your Email."),
   password: yup.string().required("Please enter your password."),
@@ -13,6 +14,7 @@ const toast = useToast();
 const [email, emailProps] = defineField("email");
 const [password, passwordProps] = defineField("password");
 const loading = ref<boolean>(false);
+
 const signInWithEmail = handleSubmit(async () => {
   try {
     loading.value = true;
@@ -22,7 +24,7 @@ const signInWithEmail = handleSubmit(async () => {
     });
     if (error) throw error;
     await navigateTo({ name: "organisations" });
-    toast.add({ title: "Login successful" });
+    toast.add({ title: "Login successful", color: "green" });
   } catch (error: any) {
     toast.add({
       title: error?.message || "Something went wrong",
@@ -37,26 +39,36 @@ const signInWithEmail = handleSubmit(async () => {
   <section class="w-1/2 mx-auto mt-20">
     <div class="p-6 rounded-md shadow-md border">
       <h1 class="text-xl mb-6">Login</h1>
-      <form class="flex flex-col gap-4" @submit.prevent="signInWithEmail">
+
+      <AzureLogin />
+
+      <div class="flex items-center gap-2 my-4">
+        <hr class="grow" />
+        <span class="font-bold text-primary">OR</span>
+        <hr class="grow" />
+      </div>
+      <form class="flex flex-col gap-4 mb-4" @submit.prevent="signInWithEmail">
         <div class="flex flex-col gap-1">
-          <input
+          <UInput
             v-model="email"
             v-bind="emailProps"
+            size="lg"
+            variant="outline"
             placeholder="Email"
             type="email"
-            class="t-input"
           />
           <span v-if="errors.email" class="text-xs font-medium text-red-500">
             {{ errors.email }}
           </span>
         </div>
         <div class="flex flex-col gap-1">
-          <input
+          <UInput
             type="password"
             placeholder="Password"
             v-model="password"
             v-bind="passwordProps"
-            class="t-input"
+            size="lg"
+            variant="outline"
           />
           <span v-if="errors.password" class="text-xs font-medium text-red-500">
             {{ errors.password }}
@@ -65,16 +77,18 @@ const signInWithEmail = handleSubmit(async () => {
         <UButton
           size="xl"
           :disabled="!meta.valid"
+          leading-icon="i-heroicons-arrow-left-on-rectangle-20-solid"
           :loading="loading"
           type="submit"
         >
           Login
         </UButton>
       </form>
+
       <p class="mt-2">
         Don't have an account?
-        <NuxtLink to="/register" class="text-primary underline"
-          >Register Now
+        <NuxtLink to="/register" class="text-primary underline">
+          Register Now
         </NuxtLink>
       </p>
     </div>
