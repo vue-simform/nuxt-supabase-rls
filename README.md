@@ -95,7 +95,7 @@ Check out the [deployment documentation](https://nuxt.com/docs/getting-started/d
 1. Nuxt UI library integrations for seemless user experience
 1. Supabase tables, RLS, policies, triggers setup pre configued and fully scalable.
 1. vee-validate with composition api pre setup in auth pages.
-1. Route guard added
+1. Route guard
 
 ## Page Structure
 
