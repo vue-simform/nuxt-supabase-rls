@@ -3,6 +3,7 @@
 Nuxt Supabase is a getting started template for Nuxt + Supabase projects, having pre configued Auth, RLS, policies, Nuxt UI, Tailwind setup
 
 ## 📹 Preview
+
 https://github.com/vue-simform/nuxt-supabase-rls/assets/152366223/97227864-4c8b-431d-b057-405442394a46
 
 ## Clone
@@ -40,6 +41,16 @@ HOST="http://localhost:3000"
 1. To have the same replica of DB structure as mine. Go to Supabase SQL Editor
 2. Copy paste [this](docs/migrations.txt) into your Supabase SQL editor.
 3. Next step is to select all (cmd + A / control + A) & then Run Selected.
+
+## Login Supabase from terminal
+
+```bash
+npx supabase login
+```
+
+1. A like will appear when you enter above command. Click on that link.
+1. Generate a token, & copy it. _Remember to save that token somewhere_
+1. Paste that token in terminal.
 
 ## Generate types
 
