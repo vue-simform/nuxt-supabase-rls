@@ -71,7 +71,7 @@ const handleSubmit = async () => {
       </UBadge>
     </div>
     <hr class="my-4" />
-    <textarea v-model="text" rows="5" class="w-full t-input"></textarea>
+    <UTextarea v-model="text" placeholder="Write here..." />
     <UButton
       type="submit"
       icon="i-heroicons-pencil-square"

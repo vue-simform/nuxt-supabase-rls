@@ -7,7 +7,7 @@ import Footer from "~/components/Footer.vue";
   <div class="flex flex-col min-h-screen">
     <Header />
 
-    <main class="grow container mx-auto">
+    <main class="grow md:container mx-2 md:mx-auto">
       <slot />
     </main>
     <Footer />

@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import { useForm } from "vee-validate";
 import * as yup from "yup";
+import AzureLogin from "~/components/common/button/AzureLogin.vue";
+
 const schema = yup.object({
   email: yup.string().email().required("Please enter your Email."),
   password: yup
@@ -17,6 +19,7 @@ const { errors, defineField, handleSubmit, meta } = useForm({
 });
 const supabase = useSupabaseClient();
 const toast = useToast();
+const runtimeConfig = useRuntimeConfig();
 
 const [email, emailProps] = defineField("email");
 const [password, passwordProps] = defineField("password");
@@ -31,6 +34,9 @@ const signUpWithEmail = handleSubmit(async () => {
     const { error } = await supabase.auth.signUp({
       email: email.value,
       password: password.value,
+      options: {
+        emailRedirectTo: `${runtimeConfig.public.host}/confirm`,
+      },
     });
     if (error) throw error;
     toast.add({ title: "Check your email for the login link!" });
@@ -43,7 +49,7 @@ const signUpWithEmail = handleSubmit(async () => {
 });
 </script>
 <template>
-  <section class="w-1/2 mx-auto mt-20">
+  <section class="w-full md:w-1/2 mx-auto mt-10 md:mt-20">
     <div class="p-6 rounded-lg shadow-md border">
       <h1 class="text-xl mb-6">Register</h1>
 

@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { useForm } from "vee-validate";
 import * as yup from "yup";
+import AzureLogin from "~/components/common/button/AzureLogin.vue";
 
 const schema = yup.object({
   email: yup.string().email().required("Please enter your Email."),
@@ -23,8 +24,7 @@ const signInWithEmail = handleSubmit(async () => {
       password: password.value,
     });
     if (error) throw error;
-    await navigateTo({ name: "organisations" });
-    toast.add({ title: "Login successful", color: "green" });
+    await navigateTo("/confirm");
   } catch (error: any) {
     toast.add({
       title: error?.message || "Something went wrong",
@@ -36,7 +36,7 @@ const signInWithEmail = handleSubmit(async () => {
 });
 </script>
 <template>
-  <section class="w-1/2 mx-auto mt-20">
+  <section class="w-full md:w-1/2 mx-auto mt-10 md:mt-20">
     <div class="p-6 rounded-md shadow-md border">
       <h1 class="text-xl mb-6">Login</h1>
 

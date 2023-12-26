@@ -26,7 +26,7 @@ const projects = data.value.projects;
 </script>
 
 <template>
-  <div class="mt-5 text-2xl flex items-center justify-between">
+  <div class="mt-5 text-lg md:text-2xl flex items-center justify-between">
     <h2>
       Organisations Name:
       <span class="font-bold">
@@ -39,7 +39,7 @@ const projects = data.value.projects;
   </div>
   <hr class="my-3" />
   <div>
-    <h2 class="text-xl font-bold mb-3">List of Projects</h2>
+    <h2 class="md:text-xl font-bold mb-3">List of Projects</h2>
     <ul class="flex flex-col gap-3">
       <NuxtLink
         v-for="{ projects: project } in projects"

@@ -11,7 +11,7 @@ const handleError = () => clearError({ redirect: "/" });
     <NuxtLayout>
       <div class="grid place-items-center text-center mt-10">
         <h2 class="text-xl font-bold">{{ error.message }}</h2>
-        <Button text="Go to Home Page" class="mt-2" @click="handleError" />
+        <UButton class="mt-2" @click="handleError">Go to Home Page</UButton>
       </div>
     </NuxtLayout>
   </div>
