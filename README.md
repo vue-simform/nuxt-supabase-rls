@@ -96,6 +96,7 @@ Check out the [deployment documentation](https://nuxt.com/docs/getting-started/d
 1. Supabase tables, RLS, policies, triggers setup pre configued and fully scalable.
 1. vee-validate with composition api pre setup in auth pages.
 1. Route guard
+1. Responsive UI
 
 ## Page Structure
 
